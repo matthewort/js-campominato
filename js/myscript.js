@@ -23,11 +23,11 @@ console.log(arrayNumeri);
 // il computer chiede all’utente (100 - 16) volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 for (var i = 1; i <= 84; i++) {
   var inserireInput = prompt("inserisci un numero")
-  console.log(inserireInput);
-  if (inserireInput > 100) {
-    inserireInput = Math.max(100);
-  } else {
-
+  if (inserireInput < 100) {
+    console.log(inserireInput)
+  } else if (inserireInput > 100) {
+    console.log("non va")
   }
-
 }
+
+// L’utente non può inserire più volte lo stesso numero.Se il numero è presente nella lista dei numeri generati
