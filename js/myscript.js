@@ -42,4 +42,4 @@ while(arrayUtente.length <= 84 && minaTrovata == false) {
   }
 }
 
-document.getElementById("risultato").innerHTML = "IL PUNTEGGIO MASSIMO RAGGIUNTO E': " + listUt.length;
+document.getElementById("risultato").innerHTML = "il tuo punteggio: " + listUt.length;
