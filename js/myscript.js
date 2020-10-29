@@ -12,33 +12,34 @@ var arrayNumeri = [];
 while(arrayNumeri.length < 16){
     var numeroRandom = Math.floor(Math.random() * 100) + 1;
     //rimuovo i doppioni nei numeri random
-    if(arrayNumeri.indexOf(numeroRandom) === -1) arrayNumeri.push(numeroRandom); {
+    if(arrayNumeri.indexOf(numeroRandom) === -1) {
+      arrayNumeri.push(numeroRandom);
     }
-    i++;
 }
 console.log(arrayNumeri);
 
 // il computer chiede all’utente 84 volte di inserire un numero alla volta, sempre compreso tra 1 e 100.
 var arrayUtente = [];
-var minatrovata = false;
-var i = 0;
-while(arrayUtente.length <= 84 && minatrovata == false) {
+var minaTrovata = false;
 
-  var inserireInput = prompt("inserisci un numero");
-  // se il numero è presente nella lista dei numeri generati, la partita termina
-  if (arrayNumeri.includes(inserireInput) == true) {
-    alert("game over");
-    minatrovata == true;
-    // non permetto all'utente di inserire un numero oltre 100 o prima dell'1.
-  } else if (inserireInput > 100 || inserireInput < 1) {
-    alert("non va");
-    // l’utente non può inserire più volte lo stesso numero.
+while(arrayUtente.length <= 84 && minaTrovata == false) {
+
+  var inserireInput = prompt("inserisci un numero da 1 a 100");
+  // non permetto all'utente di inserire un numero oltre 100 o prima dell'1.
+  if (inserireInput > 100 || inserireInput < 1) {
+      alert("non puoi inserire un numero prima di 1 e oltre 100");
+  // l’utente non può inserire più volte lo stesso numero.
   } else if (arrayUtente.includes(inserireInput) == true) {
-    alert("no");
-    // costringo l'utente a inserire un numero entro il 100.
-  } else if (inserireInput < 100) {
+    alert("hai inserito due volte lo stesso numero");
+  // se il numero è presente nella lista dei numeri generati, la partita termina
+  } else if (arrayNumeri.includes(inserireInput) == true) {
+    alert("game over");
+    minaTrovata = true;
+    // faccio inserire il numero normalmente
+  } else {
+    arrayUtente.push(inserireInput);
     console.log(inserireInput);
   }
-
-  i++
 }
+
+document.getElementById("risultato").innerHTML = "IL PUNTEGGIO MASSIMO RAGGIUNTO E': " + listUt.length;
