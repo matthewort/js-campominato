@@ -27,7 +27,7 @@ while(arrayUtente.length <= 84 && minaTrovata == false) {
   var inserireInput = prompt("inserisci un numero da 1 a 100");
   // non permetto all'utente di inserire un numero oltre 100 o prima dell'1.
   if (inserireInput > 100 || inserireInput < 1) {
-      alert("non puoi inserire un numero prima di 1 e oltre 100");
+    alert("non puoi inserire un numero prima di 1 e oltre 100");
   // l’utente non può inserire più volte lo stesso numero.
   } else if (arrayUtente.includes(inserireInput) == true) {
     alert("hai inserito due volte lo stesso numero");
